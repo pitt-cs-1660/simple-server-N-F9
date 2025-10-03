@@ -22,9 +22,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY . .
-
 COPY --from=builder /app/.venv /app/.venv
+
+COPY --from=builder /app/tests ./tests
 
 EXPOSE 8000
 
